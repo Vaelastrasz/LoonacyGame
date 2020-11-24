@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Card.qml</file>
+        <file>Player.qml</file>
+        <file>DropDeck.qml</file>
+        <file>DropDeckLayer.qml</file>
     </qresource>
 </RCC>
