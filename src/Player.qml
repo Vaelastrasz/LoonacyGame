@@ -7,7 +7,7 @@ Item {
 
     id: root
 
-    function generateHand(cardNumber : int) {
+    function generateHand(cardNumber) {
         console.log("CardNum: " + cardNumber)
         var colorArray = ["blue", "green", "yellow", "limegreen", "red"]
         var iter;
@@ -20,9 +20,10 @@ Item {
         console.log("direction of player: " + direction)
         switch(direction) {
         case "up":
-            anchors.rightMargin = mainWindow.cardWidth * 8
-            anchors.top = parent.top
-            anchors.right = parent.right
+//            anchors.rightMargin = mainWindow.cardWidth * 8
+//            anchors.top = parent.top
+//            anchors.right = parent.right
+            anchors.leftMargin = (mainWindow.width - handRow.width) / 2
             break;
         case "down":
             break;

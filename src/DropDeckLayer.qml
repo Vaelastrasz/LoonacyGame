@@ -3,7 +3,7 @@ import QtQuick 2.0
 Item {
     id: root
     anchors.left: parent.left
-    anchors.leftMargin: mainWindow.cardWidth * 1.3
+    anchors.leftMargin: mainWindow.cardWidth * 2.4
     anchors.top: parent.top
     anchors.topMargin: mainWindow.cardHeight * 1.5
     Row {

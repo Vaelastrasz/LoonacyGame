@@ -13,19 +13,30 @@ Window {
     property int cardWidth: (width / 10)
     property int cardHeight: (height / 5)
 
-    DropDeckLayer{}
+    Image {
+        anchors.fill: parent
+        source: "/images/resources/background"
+    }
+
+    DropDeckLayer {
+        id: dropDeckLayer
+        x: 496
+        y: 240
+    }
+
+    DrawDeck {
+        id: drawDeck
+    }
 
     Player {
         id: player1
-        x: 243
-        y: 384
         direction: "up"
     }
-
 
     Player {
         id: player2
         direction: "down"
     }
+
 
 }
