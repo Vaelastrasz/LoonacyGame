@@ -1,5 +1,23 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Card.qml</file>
+        <file>Player.qml</file>
+        <file>DropDeck.qml</file>
+        <file>DropDeckLayer.qml</file>
+        <file>DrawDeck.qml</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>resources/background.jpg</file>
+        <file>resources/brain.png</file>
+        <file>resources/cat.png</file>
+        <file>resources/chocolate.png</file>
+        <file>resources/earth.png</file>
+        <file>resources/guys.png</file>
+        <file>resources/heart.png</file>
+        <file>resources/liberty.png</file>
+        <file>resources/moon.png</file>
+        <file>resources/back.png</file>
+        <file>resources/logo.png</file>
     </qresource>
 </RCC>
