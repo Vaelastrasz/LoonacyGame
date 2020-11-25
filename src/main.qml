@@ -4,15 +4,14 @@ import QtQuick.Layouts 1.0
 
 Window {
     id: mainWindow
-    width: 640
-    height: 480
     visible: true
+    visibility: "Maximized"
     title: "Loonacy Game v 0.1"
 
     property var currentMaxZ: 0
     property string key : "dropDeckKey"
-    property int cardWidth: (width / 10)
-    property int cardHeight: (height / 5)
+    property int cardWidth: (width / 13)
+    property int cardHeight: (height / 4.5)
 
     Image {
         id: generalBackgroundImage
@@ -24,10 +23,6 @@ Window {
         id: dropDeckLayer
     }
 
-    DrawDeck {
-        id: drawDeck
-    }
-
     Player {
         id: player1
         direction: "up"
@@ -35,8 +30,17 @@ Window {
 
     Player {
         id: player2
+        y: 0
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: mainWindow.cardHeight
         direction: "down"
     }
 
 
 }
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.5}D{i:4}
+}
+##^##*/

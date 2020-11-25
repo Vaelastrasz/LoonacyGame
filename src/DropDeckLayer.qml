@@ -2,13 +2,16 @@ import QtQuick 2.0
 
 Item {
     id: root
-    anchors.left: parent.left
-    anchors.leftMargin: mainWindow.cardWidth * 2.4
-    anchors.top: parent.top
-    anchors.topMargin: mainWindow.cardHeight * 1.5
+    anchors.centerIn: parent
     Row {
-        anchors.fill: parent
-        spacing: mainWindow.cardWidth / 2
+        spacing: mainWindow.cardWidth / 3
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        DrawDeck {
+            id: drawDeck
+        }
+
         DropDeck {
             id: dropDeck1
         }

@@ -36,7 +36,7 @@ Item {
     Row {
         id: handRow
         spacing : -(mainWindow.cardWidth / 3)
-        Component.onCompleted: {root.setAnchors(); generateHand(5)}
+        Component.onCompleted: {setAnchors(); generateHand(5)}
         Card {
             id: blueCard
             color: "blue"
