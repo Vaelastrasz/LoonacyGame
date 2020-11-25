@@ -16,12 +16,15 @@ Item {
         anchors.fill: parent
         onPressed: {console.log("clicked"); cardLeftCounter--}
     }
+
     Rectangle {
         color: idleColor
         anchors.fill: parent
         Text {
-            anchors.centerIn: parent
+            anchors.bottom: parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
             text: "CardLeft:<b> " + cardLeftCounter + "</b>"
+            color: "white"
             font.pixelSize: 15
         }
     }

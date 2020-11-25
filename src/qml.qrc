@@ -17,5 +17,7 @@
         <file>resources/heart.png</file>
         <file>resources/liberty.png</file>
         <file>resources/moon.png</file>
+        <file>resources/back.png</file>
+        <file>resources/logo.png</file>
     </qresource>
 </RCC>

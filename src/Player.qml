@@ -5,6 +5,8 @@ Item {
     property int cardNum: 0
     property alias playerHand: handRow;
     id: root
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.horizontalCenterOffset: -(handRow.width / 2)
 
     function generateHand(cardNumber) {
         console.log("CardNum: " + cardNumber)
@@ -19,19 +21,10 @@ Item {
         console.log("direction of player: " + direction)
         switch(direction) {
         case "up":
-            anchors.leftMargin = parent.width * 0.2
-            anchors.rightMargin = parent.width * 0.2
-            anchors.left = parent.left
-            anchors.right = parent.right
-            console.log("anchors.leftMargin  " + anchors.leftMargin)
+            anchors.top = parent.top
             break;
         case "down":
-            anchors.leftMargin = parent.width * 0.2
-            anchors.rightMargin = parent.width * 0.2
-            anchors.left = parent.left
-            anchors.right = parent.right
             anchors.bottom = parent.bottom
-            console.log("anchors.rightMargin  " + anchors.rightMargin)
             break;
         case "left":
             break;
@@ -39,12 +32,11 @@ Item {
             break;
         }
     }
+
     Row {
         id: handRow
-        anchors.fill: parent
         spacing : -(mainWindow.cardWidth / 3)
-        function tmp() {console.log("Card:" + mainWindow.cardWidth + "x" + mainWindow.cardHeight)}
-        Component.onCompleted: {setAnchors(); tmp(); generateHand(5)}
+        Component.onCompleted: {root.setAnchors(); generateHand(5)}
         Card {
             id: blueCard
             color: "blue"
@@ -63,6 +55,10 @@ Item {
         Card {
             id: redCard
             color: "red"
+            text: "Card4"
+        }
+        Card {
+            color: "green"
             text: "Card4"
         }
     }
