@@ -16,13 +16,13 @@ Item {
         anchors.fill: parent
         onPressed: {console.log("clicked"); cardLeftCounter--}
     }
-//    Rectangle {
-//        color: idleColor
-//        anchors.fill: parent
-//        Text {
-//            anchors.centerIn: parent
-//            text: "CardLeft:<b> " + cardLeftCounter + "</b>"
-//            font.pixelSize: 15
-//        }
-//    }
+    Rectangle {
+        color: idleColor
+        anchors.fill: parent
+        Text {
+            anchors.centerIn: parent
+            text: "CardLeft:<b> " + cardLeftCounter + "</b>"
+            font.pixelSize: 15
+        }
+    }
 }

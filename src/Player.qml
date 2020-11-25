@@ -20,12 +20,19 @@ Item {
         console.log("direction of player: " + direction)
         switch(direction) {
         case "up":
-//            anchors.rightMargin = mainWindow.cardWidth * 8
-//            anchors.top = parent.top
-//            anchors.right = parent.right
-            anchors.leftMargin = (mainWindow.width - handRow.width) / 2
+            anchors.leftMargin = parent.width * 0.2
+            anchors.rightMargin = parent.width * 0.2
+            anchors.left = parent.left
+            anchors.right = parent.right
+            console.log("anchors.leftMargin  " + anchors.leftMargin)
             break;
         case "down":
+            anchors.leftMargin = parent.width * 0.2
+            anchors.rightMargin = parent.width * 0.2
+            anchors.left = parent.left
+            anchors.right = parent.right
+            anchors.bottom = parent.bottom
+            console.log("anchors.rightMargin  " + anchors.rightMargin)
             break;
         case "left":
             break;

@@ -14,14 +14,13 @@ Window {
     property int cardHeight: (height / 5)
 
     Image {
+        id: generalBackgroundImage
         anchors.fill: parent
         source: "/images/resources/background"
     }
 
     DropDeckLayer {
         id: dropDeckLayer
-        x: 496
-        y: 240
     }
 
     DrawDeck {
