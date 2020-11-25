@@ -4,7 +4,6 @@ Item {
     property string direction: ""
     property int cardNum: 0
     property alias playerHand: handRow;
-
     id: root
 
     function generateHand(cardNumber) {
@@ -40,8 +39,6 @@ Item {
             break;
         }
     }
-
-
     Row {
         id: handRow
         anchors.fill: parent

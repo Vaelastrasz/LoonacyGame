@@ -1,0 +1,5 @@
+1. Move all js logic to different file
+2. Make sure using signal-slot connect system (QML Signal - JS Slot)
+3. Add onCompleted and startup() function
+4. Fix player hand anchoring
+5. Add "Help" button

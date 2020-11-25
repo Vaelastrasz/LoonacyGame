@@ -29,13 +29,28 @@ Window {
 
     Player {
         id: player1
+        height: 97
+        anchors.top: parent.top
+        anchors.topMargin: 0
+        anchors.rightMargin: 0
+        anchors.leftMargin: 0
         direction: "up"
     }
 
     Player {
         id: player2
+        y: 384
+        height: 96
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottomMargin: 0
         direction: "down"
     }
 
 
 }
+
+/*##^##
+Designer {
+    D{i:4;anchors_y:0}
+}
+##^##*/
