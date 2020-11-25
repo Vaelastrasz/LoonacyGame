@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtGraphicalEffects 1.15
+import QtGraphicalEffects 1.14
 
 Item {
     property string title: "DrawDeck"
@@ -9,10 +9,6 @@ Item {
     width: mainWindow.cardWidth * 1.5
     height: mainWindow.cardHeight * 1.5
 
-//    anchors.left: parent.left
-//    anchors.leftMargin: mainWindow.cardWidth * 0.5
-//    anchors.top: parent.top
-//    anchors.topMargin: mainWindow.cardHeight * 1.5
     MouseArea {
         anchors.fill: parent
         onPressed: {console.log("clicked"); cardLeftCounter--}
