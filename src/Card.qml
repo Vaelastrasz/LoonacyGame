@@ -6,8 +6,8 @@ Item {
     property color color: "white"
     property color borderIdle: "black"
     property color borderActive: "limegreen"
-    property string img1: "guys"
-    property string img2: "heart"
+    property string img1
+    property string img2
     property bool isDragable: true
     property var someCard
     property int xStart: 0
@@ -39,9 +39,9 @@ Item {
         cardModel.border.width = 2
     }
 
-    function scaleToDeck(asomeCard) {
+    function scaleToDeck(deckCard) {
         animationScaleToDeck.start()
-        someCard = asomeCard
+        someCard = deckCard
     }
 
     Drag.active: interactionCardArea.drag.active
@@ -100,12 +100,12 @@ Item {
             }
         }
 
-        Text {
-            text: img1 + ":" + img2
-            font.pixelSize: 20
-            anchors.centerIn: parent
-            color: "black"
-        }
+//        Text {
+//            text: img1 + ":" + img2
+//            font.pixelSize: 20
+//            anchors.centerIn: parent
+//            color: "black"
+//        }
 
         MouseArea {
             id: interactionCardArea

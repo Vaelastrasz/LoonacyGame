@@ -10,8 +10,7 @@ Item {
 
     function generateHand(cardNumber) {
         console.log("CardNum: " + cardNumber)
-        var imgArray = ["brain", "cat", "chocolate", "earth", "guys", "heart", "liberty", "moon"];
-//        imgArray.forEach(element => console.log("Category:" + element));
+        generateCard(handRow, cardNumber)
     }
 
     function setAnchors() {
@@ -34,23 +33,6 @@ Item {
         id: handRow
         spacing : -(mainWindow.cardWidth / 3)
         Component.onCompleted: {setAnchors(); generateHand(10)}
-        Card {
-            img1: "brain"
-            img2: "cat"
-        }
-        Card {
-            img1: "guys"
-            img2: "earth"
-        }
-        Card {
-            img1: "moon"
-            img2: "cat"
-        }
-        Card {
-            img1: "moon"
-            img2: "earth"
-        }
-        Card {}
     }
 
 }

@@ -1,6 +1,5 @@
 1. Move all js logic to different file
 2. Add onCompleted and startup() function
 3. Add "Help" button
-4. Add compareCard function
-5. Add card generation
-6. Add winning situations
+4. Add winning situations
+5. Add card generation animation

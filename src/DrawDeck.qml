@@ -12,7 +12,22 @@ Item {
 
     MouseArea {
         anchors.fill: parent
-        onPressed: {cardLeftCounter--}
+        onPressed: {
+            generateCard(mainWindow.player1.playerHand, 1)
+            generateCard(mainWindow.player2.playerHand, 1)
+            cardLeftCounter-= 2
+            if (cardLeftCounter <= 0) {
+                parent.visible = false
+            }
+        }
+    }
+
+    Text {
+        anchors.bottom: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: "CardLeft:<b> " + cardLeftCounter + "</b>"
+        color: "white"
+        font.pixelSize: 15
     }
 
     Image {
@@ -29,13 +44,6 @@ Item {
                     border.color: "black"
                     border.width: 2
                     radius: (width * 0.2)
-                }
-                Text {
-                    anchors.bottom: parent.top
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    text: "CardLeft:<b> " + cardLeftCounter + "</b>"
-                    color: "white"
-                    font.pixelSize: 15
                 }
             }
         }

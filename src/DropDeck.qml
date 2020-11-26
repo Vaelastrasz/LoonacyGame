@@ -21,9 +21,7 @@ Item {
         onDropped: {
             if (isCardCompatible(drag.source)) {
                 drag.source.scaleToDeck(currCard)
-                console.log("card "+drag.source.img1+":"+drag.source.img2+" is COMPATIBLE")
             } else {
-                console.log("card "+drag.source.img1+":"+drag.source.img2+" is inccompatible with "+currCard.img1+":"+currCard.img2)
                 drag.source.cardReturnAnimation()
             }
         }
