@@ -17,6 +17,11 @@ Item {
         }
     }
 
+    function addCard(card) {
+        console.log("CARD ADD CALL")
+        cardCreate.delegate()
+    }
+
     function setAnchors() {
         console.log("direction of player: " + direction)
         switch(direction) {
@@ -62,4 +67,5 @@ Item {
             text: "Card4"
         }
     }
+
 }

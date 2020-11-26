@@ -5,7 +5,9 @@ Item {
     property color color: "gray"
     property color borderIdle: "black"
     property color borderActive: "limegreen"
-    property string text: "title"
+    property string img1: "pair"
+    property string img2: "heart"
+    property bool isDragable: true
     property int xStart: 0
     property int yStart: 0
     property alias cardModel: cardModel
@@ -45,13 +47,6 @@ Item {
         border.color: borderIdle
         border.width: 2
         radius: (width * 0.2)
-
-
-        Text {
-            text: root.text
-            anchors.centerIn: parent
-            font.pixelSize: 20
-        }
 
         MouseArea {
             id: interactionCardArea

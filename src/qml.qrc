@@ -4,7 +4,7 @@
         <file>Card.qml</file>
         <file>Player.qml</file>
         <file>DropDeck.qml</file>
-        <file>DropDeckLayer.qml</file>
+        <file>DeckLayer.qml</file>
         <file>DrawDeck.qml</file>
     </qresource>
     <qresource prefix="/images">

@@ -19,7 +19,7 @@ Window {
         source: "/images/resources/background"
     }
 
-    DropDeckLayer {
+    DeckLayer {
         id: dropDeckLayer
     }
 

@@ -3,7 +3,7 @@ import QtQuick 2.12
 Item {
     property color enterColor: "red"
     property color idleColor: "yellow"
-    property alias _goal: goal
+    property alias currentCard: currCard
     id: root
     width: mainWindow.cardWidth * 1.5
     height: mainWindow.cardHeight * 1.5
@@ -14,14 +14,18 @@ Item {
         Drag.keys: [mainWindow.key]
         Component.onCompleted: {console.log(parent.width+"x"+parent.height)}
         onDropped: {
-            console.log("dropped!")
-            goal.color = enterColor
+//            currCard.color = enterColor
+            currentCard.color = drag.source.color
+            drag.source.visible = false
         }
-        onExited: goal.color = idleColor
-        Rectangle {
-            id: goal
+//        onExited: currCard.color = idleColor
+
+        Card {
+            id: currCard
             anchors.fill: parent
-            color: idleColor
+            color: "blue"
+            text: "Card1"
         }
+
     }
 }
