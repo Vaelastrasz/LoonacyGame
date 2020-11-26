@@ -4,7 +4,7 @@ import QtGraphicalEffects 1.14
 Item {
     property string title: "DrawDeck"
     property color idleColor: "grey"
-    property var cardLeftCounter: 0
+    property var cardLeftCounter: 80
     id: root
 
     width: mainWindow.cardWidth * 1.7
@@ -12,7 +12,7 @@ Item {
 
     MouseArea {
         anchors.fill: parent
-        onPressed: {console.log("clicked"); cardLeftCounter--}
+        onPressed: {cardLeftCounter--}
     }
 
     Image {

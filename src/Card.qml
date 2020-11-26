@@ -113,7 +113,10 @@ Item {
             drag.target: isDragable ? root : isDragable
             hoverEnabled: true
             onPressed: root.setDragStartPos()
-            onReleased: root.Drag.drop()
+            onReleased: {
+                root.Drag.drop()
+                root.cardReturnAnimation()
+            }
             onEntered: root.pointOnCard()
             onExited: root.unpointOnCard()
         }

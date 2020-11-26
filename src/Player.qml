@@ -42,8 +42,14 @@ Item {
             img1: "guys"
             img2: "earth"
         }
-        Card {}
-        Card {}
+        Card {
+            img1: "moon"
+            img2: "cat"
+        }
+        Card {
+            img1: "moon"
+            img2: "earth"
+        }
         Card {}
     }
 
