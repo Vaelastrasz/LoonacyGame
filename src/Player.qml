@@ -10,10 +10,10 @@ Item {
 
     function generateHand(cardNumber) {
         console.log("CardNum: " + cardNumber)
-        var colorArray = ["blue", "green", "yellow", "limegreen", "red"]
+        var imgArray = ["brain", "cat", "chocolate", "earth", "guys", "heart", "liberty", "moon"]
         var iter;
         for (iter in cardNumber) {
-            //generate card here
+            console.log("Category:" + iter)
         }
     }
 
@@ -41,30 +41,20 @@ Item {
     Row {
         id: handRow
         spacing : -(mainWindow.cardWidth / 3)
-        Component.onCompleted: {setAnchors(); generateHand(5)}
+        Component.onCompleted: {setAnchors(); generateHand(10)}
         Card {
-            id: blueCard
-            color: "blue"
-            text: "Card1"
+            img1: "brain"
+            img2: "cat"
         }
         Card {
-            id: greenCard
-            color: "green"
-            text: "Card2"
+            img1: "guys"
+            img2: "earth"
         }
         Card {
-            id: yellowCard
-            color: "yellow"
-            text: "Card3"
         }
         Card {
-            id: redCard
-            color: "red"
-            text: "Card4"
         }
         Card {
-            color: "green"
-            text: "Card4"
         }
     }
 
