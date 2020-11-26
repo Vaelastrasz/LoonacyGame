@@ -19,7 +19,7 @@ Window {
         source: "/images/resources/background"
     }
 
-    DropDeckLayer {
+    DeckLayer {
         id: dropDeckLayer
     }
 
@@ -38,9 +38,3 @@ Window {
 
 
 }
-
-/*##^##
-Designer {
-    D{i:0;formeditorZoom:0.5}D{i:4}
-}
-##^##*/
