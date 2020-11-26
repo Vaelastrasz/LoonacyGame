@@ -10,11 +10,8 @@ Item {
 
     function generateHand(cardNumber) {
         console.log("CardNum: " + cardNumber)
-        var imgArray = ["brain", "cat", "chocolate", "earth", "guys", "heart", "liberty", "moon"]
-        var iter;
-        for (iter in cardNumber) {
-            console.log("Category:" + iter)
-        }
+        var imgArray = ["brain", "cat", "chocolate", "earth", "guys", "heart", "liberty", "moon"];
+        imgArray.forEach(element => console.log("Category:" + element));
     }
 
     function addCard(card) {

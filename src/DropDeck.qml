@@ -12,7 +12,6 @@ Item {
         Drag.keys: [mainWindow.key]
         Component.onCompleted: {console.log(parent.width+"x"+parent.height)}
         onDropped: {
-//            currCard.color = drag.source.color
             drag.source.visible = false
         }
 
