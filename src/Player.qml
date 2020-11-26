@@ -11,12 +11,7 @@ Item {
     function generateHand(cardNumber) {
         console.log("CardNum: " + cardNumber)
         var imgArray = ["brain", "cat", "chocolate", "earth", "guys", "heart", "liberty", "moon"];
-        imgArray.forEach(element => console.log("Category:" + element));
-    }
-
-    function addCard(card) {
-        console.log("CARD ADD CALL")
-        cardCreate.delegate()
+//        imgArray.forEach(element => console.log("Category:" + element));
     }
 
     function setAnchors() {
@@ -47,12 +42,9 @@ Item {
             img1: "guys"
             img2: "earth"
         }
-        Card {
-        }
-        Card {
-        }
-        Card {
-        }
+        Card {}
+        Card {}
+        Card {}
     }
 
 }

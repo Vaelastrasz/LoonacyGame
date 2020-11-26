@@ -5,8 +5,9 @@ Item {
     property string title: "DrawDeck"
     property color idleColor: "grey"
     property var cardLeftCounter: 0
+    id: root
 
-    width: mainWindow.cardWidth * 1.5
+    width: mainWindow.cardWidth * 1.7
     height: mainWindow.cardHeight * 1.5
 
     MouseArea {

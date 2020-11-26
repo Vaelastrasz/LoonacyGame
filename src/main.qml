@@ -10,7 +10,7 @@ Window {
 
     property var currentMaxZ: 0
     property string key : "dropDeckKey"
-    property int cardWidth: (width / 13)
+    property int cardWidth: (width / 15)
     property int cardHeight: (height / 4.5)
 
     Image {

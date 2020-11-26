@@ -9,6 +9,7 @@ Item {
     property string img1: "guys"
     property string img2: "heart"
     property bool isDragable: true
+    property var someCard
     property int xStart: 0
     property int yStart: 0
 
@@ -18,23 +19,29 @@ Item {
     function setDragStartPos() {
         xStart = x
         yStart = y
-        console.log("Drag started: " + xStart + "x" + yStart + "\nZ: " + z)
     }
 
     function cardReturnAnimation() {
         animationXBack.start()
         animationYBack.start()
     }
+
     function pointOnCard() {
         animationScaleOnMouse.start()
         cardModel.border.color = borderActive
         cardModel.border.width = 4
         z = ++currentMaxZ;
     }
+
     function unpointOnCard() {
         animationScaleLower.start()
         cardModel.border.color = borderIdle
         cardModel.border.width = 2
+    }
+
+    function scaleToDeck(asomeCard) {
+        animationScaleToDeck.start()
+        someCard = asomeCard
     }
 
     Drag.active: interactionCardArea.drag.active
@@ -106,7 +113,7 @@ Item {
             drag.target: isDragable ? root : isDragable
             hoverEnabled: true
             onPressed: root.setDragStartPos()
-            onReleased: {root.cardReturnAnimation(); root.Drag.drop()}
+            onReleased: root.Drag.drop()
             onEntered: root.pointOnCard()
             onExited: root.unpointOnCard()
         }
@@ -125,6 +132,19 @@ Item {
             from: 1.2
             to: 1.0
             duration: 300
+        }
+
+        ScaleAnimator {
+            id: animationScaleToDeck
+            target: root
+            from: 1.0
+            to: 1.5
+            duration: 300
+            onStopped: {
+                someCard.img1 = img1
+                someCard.img2 = img2
+                visible = false
+            }
         }
 
         PropertyAnimation {
