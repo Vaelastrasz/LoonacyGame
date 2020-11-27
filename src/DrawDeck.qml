@@ -15,7 +15,7 @@ Item {
         onPressed: {
             generateCard(mainWindow.player1.playerHand, 1)
             generateCard(mainWindow.player2.playerHand, 1)
-            cardLeftCounter-= 2
+            cardLeftCounter -= 2
             if (cardLeftCounter <= 0) {
                 parent.visible = false
             }

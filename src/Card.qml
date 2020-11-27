@@ -6,8 +6,8 @@ Item {
     property color color: "white"
     property color borderIdle: "black"
     property color borderActive: "limegreen"
-    property string img1
-    property string img2
+    property string img1: "brain"
+    property string img2: "brain"
     property bool isDragable: true
     property var someCard
     property int xStart: 0
@@ -42,6 +42,13 @@ Item {
     function scaleToDeck(deckCard) {
         animationScaleToDeck.start()
         someCard = deckCard
+    }
+
+    function moveCard(finalX, finalY) {
+        xStart = finalX
+        yStart = finalY
+        console.log("Moving card to " + finalX + "x" + finalY)
+        cardReturnAnimation()
     }
 
     Drag.active: interactionCardArea.drag.active
@@ -100,17 +107,10 @@ Item {
             }
         }
 
-//        Text {
-//            text: img1 + ":" + img2
-//            font.pixelSize: 20
-//            anchors.centerIn: parent
-//            color: "black"
-//        }
-
         MouseArea {
             id: interactionCardArea
             anchors.fill: parent
-            drag.target: isDragable ? root : isDragable
+            drag.target: isDragable ? root : isDragable //TODO: Change, now it's maximal shit
             hoverEnabled: true
             onPressed: root.setDragStartPos()
             onReleased: {
@@ -142,11 +142,12 @@ Item {
             target: root
             from: 1.0
             to: 1.5
-            duration: 300
-            onStopped: {
+            duration: 1
+            onFinished: {
                 someCard.img1 = img1
                 someCard.img2 = img2
                 visible = false
+                root.destroy()
             }
         }
 

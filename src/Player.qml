@@ -1,19 +1,22 @@
 import QtQuick 2.12
 
 Item {
+    property string name: "Player"
     property string direction: ""
-    property int cardNum: 0
+    property int cardNum: handRow.children.length
     property alias playerHand: handRow;
+
     id: root
     anchors.horizontalCenter: parent.horizontalCenter
     anchors.horizontalCenterOffset: -(handRow.width / 2)
+    anchors.bottomMargin: mainWindow.cardHeight
 
     function generateHand(cardNumber) {
-        console.log("CardNum: " + cardNumber)
+
         generateCard(handRow, cardNumber)
     }
 
-    function setAnchors() {
+    function setPlayerAnchors() {
         console.log("direction of player: " + direction)
         switch(direction) {
         case "up":
@@ -29,10 +32,17 @@ Item {
         }
     }
 
+    onCardNumChanged: {
+        if (cardNum <= 0) {
+            gameWon(name)
+        }
+    }
+
+    Component.onCompleted: {setPlayerAnchors(); generateHand(3)}
+
     Row {
         id: handRow
         spacing : -(mainWindow.cardWidth / 3)
-        Component.onCompleted: {setAnchors(); generateHand(10)}
     }
 
 }
