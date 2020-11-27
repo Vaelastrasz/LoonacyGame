@@ -4,7 +4,7 @@ import QtGraphicalEffects 1.14
 Item {
     property string title: "DrawDeck"
     property color idleColor: "grey"
-    property var cardLeftCounter: 80
+    property var cardLeftCounter: 20
     id: root
 
     width: mainWindow.cardWidth * 1.7

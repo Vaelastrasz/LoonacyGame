@@ -12,7 +12,6 @@ Item {
     anchors.bottomMargin: mainWindow.cardHeight
 
     function generateHand(cardNumber) {
-
         generateCard(handRow, cardNumber)
     }
 
@@ -38,7 +37,7 @@ Item {
         }
     }
 
-    Component.onCompleted: {setPlayerAnchors(); generateHand(3)}
+    Component.onCompleted: {setPlayerAnchors(); generateHand(10)}
 
     Row {
         id: handRow
