@@ -1,3 +1,2 @@
 1*. Move all js logic to different file
-2. Add "Help" button
-3. Add card generation animation
+2.  Add card generation animation
