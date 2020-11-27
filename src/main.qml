@@ -7,9 +7,7 @@ Window {
     id: mainWindow
     visible: true
     visibility: "Maximized"
-//    width: 800
-//    height: 400
-    title: "Loonacy Game v0.1"
+    title: "Loonacy Game v0.2"
 
     property alias player1: player1
     property alias player2: player2
