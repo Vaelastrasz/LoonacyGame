@@ -4,14 +4,30 @@ import QtGraphicalEffects 1.14
 Item {
     property string title: "DrawDeck"
     property color idleColor: "grey"
-    property var cardLeftCounter: 0
+    property var cardLeftCounter: 80
+    id: root
 
-    width: mainWindow.cardWidth * 1.5
+    width: mainWindow.cardWidth * 1.7
     height: mainWindow.cardHeight * 1.5
 
     MouseArea {
         anchors.fill: parent
-        onPressed: {console.log("clicked"); cardLeftCounter--}
+        onPressed: {
+            generateCard(mainWindow.player1.playerHand, 1)
+            generateCard(mainWindow.player2.playerHand, 1)
+            cardLeftCounter -= 2
+            if (cardLeftCounter <= 0) {
+                parent.visible = false
+            }
+        }
+    }
+
+    Text {
+        anchors.bottom: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        text: "CardLeft:<b> " + cardLeftCounter + "</b>"
+        color: "white"
+        font.pixelSize: 15
     }
 
     Image {
@@ -28,13 +44,6 @@ Item {
                     border.color: "black"
                     border.width: 2
                     radius: (width * 0.2)
-                }
-                Text {
-                    anchors.bottom: parent.top
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    text: "CardLeft:<b> " + cardLeftCounter + "</b>"
-                    color: "white"
-                    font.pixelSize: 15
                 }
             }
         }

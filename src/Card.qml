@@ -6,9 +6,10 @@ Item {
     property color color: "white"
     property color borderIdle: "black"
     property color borderActive: "limegreen"
-    property string img1: "guys"
-    property string img2: "heart"
+    property string img1: "brain"
+    property string img2: "brain"
     property bool isDragable: true
+    property var someCard
     property int xStart: 0
     property int yStart: 0
 
@@ -18,23 +19,36 @@ Item {
     function setDragStartPos() {
         xStart = x
         yStart = y
-        console.log("Drag started: " + xStart + "x" + yStart + "\nZ: " + z)
     }
 
     function cardReturnAnimation() {
         animationXBack.start()
         animationYBack.start()
     }
+
     function pointOnCard() {
         animationScaleOnMouse.start()
         cardModel.border.color = borderActive
         cardModel.border.width = 4
         z = ++currentMaxZ;
     }
+
     function unpointOnCard() {
         animationScaleLower.start()
         cardModel.border.color = borderIdle
         cardModel.border.width = 2
+    }
+
+    function scaleToDeck(deckCard) {
+        animationScaleToDeck.start()
+        someCard = deckCard
+    }
+
+    function moveCard(finalX, finalY) {
+        xStart = finalX
+        yStart = finalY
+        console.log("Moving card to " + finalX + "x" + finalY)
+        cardReturnAnimation()
     }
 
     Drag.active: interactionCardArea.drag.active
@@ -93,20 +107,16 @@ Item {
             }
         }
 
-        Text {
-            text: img1 + ":" + img2
-            font.pixelSize: 20
-            anchors.centerIn: parent
-            color: "black"
-        }
-
         MouseArea {
             id: interactionCardArea
             anchors.fill: parent
-            drag.target: isDragable ? root : isDragable
+            drag.target: isDragable ? root : isDragable //TODO: Change, now it's maximal shit
             hoverEnabled: true
             onPressed: root.setDragStartPos()
-            onReleased: {root.cardReturnAnimation(); root.Drag.drop()}
+            onReleased: {
+                root.Drag.drop()
+                root.cardReturnAnimation()
+            }
             onEntered: root.pointOnCard()
             onExited: root.unpointOnCard()
         }
@@ -125,6 +135,20 @@ Item {
             from: 1.2
             to: 1.0
             duration: 300
+        }
+
+        ScaleAnimator {
+            id: animationScaleToDeck
+            target: root
+            from: 1.0
+            to: 1.5
+            duration: 1
+            onFinished: {
+                someCard.img1 = img1
+                someCard.img2 = img2
+                visible = false
+                root.destroy()
+            }
         }
 
         PropertyAnimation {
