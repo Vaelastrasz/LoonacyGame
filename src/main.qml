@@ -7,7 +7,7 @@ Window {
     id: mainWindow
     visible: true
     visibility: "Maximized"
-    title: "Loonacy Game v0.2"
+    title: "Loonacy Game v0.3"
 
     property alias player1: player1
     property alias player2: player2
