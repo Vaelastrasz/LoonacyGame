@@ -6,6 +6,7 @@
         <file>DropDeck.qml</file>
         <file>DeckLayer.qml</file>
         <file>DrawDeck.qml</file>
+        <file>HelpButton.qml</file>
     </qresource>
     <qresource prefix="/images">
         <file>resources/background.jpg</file>

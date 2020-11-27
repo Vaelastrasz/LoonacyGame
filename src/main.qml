@@ -131,5 +131,5 @@ Window {
         direction: "down"
     }
 
-
+    HelpButton {}
 }
