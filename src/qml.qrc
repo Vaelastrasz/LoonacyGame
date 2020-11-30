@@ -9,7 +9,6 @@
         <file>HelpButton.qml</file>
     </qresource>
     <qresource prefix="/images">
-        <file>resources/background.jpg</file>
         <file>resources/brain.png</file>
         <file>resources/cat.png</file>
         <file>resources/chocolate.png</file>
@@ -20,5 +19,6 @@
         <file>resources/moon.png</file>
         <file>resources/back.png</file>
         <file>resources/logo.png</file>
+        <file>resources/background.jpg</file>
     </qresource>
 </RCC>
