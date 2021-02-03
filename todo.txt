@@ -1,2 +1,0 @@
-1*. Move all js logic to different file
-2.  Add card generation animation
