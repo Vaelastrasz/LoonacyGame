@@ -1,5 +1,5 @@
 import QtQuick 2.12
-import QtGraphicalEffects 1.14
+import Qt5Compat.GraphicalEffects
 
 Item {
     id: root
